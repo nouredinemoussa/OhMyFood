@@ -648,6 +648,8 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
   }
   .restaurants {
+    padding-left: 90px;
+    padding-right: 90px;
     .card__group {
       display: flex;
       flex-direction: row;
@@ -655,17 +657,16 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       margin-top: 15px;
   
       & > a {
-        width: 40%;
+        width: 47%;
         text-decoration: none;
       }
           .card {
-      width: 720px;
-      height: 370px; 
+      width: 100%
       img {
-        height: 280px;
+        height: 160px;
       }
         .card__badge {
-      left: 85%;
+      left: 76%;
       top: 22px;
     }
     .card__icon {
@@ -737,7 +738,14 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding-right: 175px;
   }
   .restaurants {
-    padding-left: 176px;
-    padding-right: 390px;
+    padding-left: 175px;
+    padding-right: 175px;
+    .card__badge {
+      left: 85%;
+    }
+    .card__newimg {
+      height: 200px;
+    }
   }
+
 }

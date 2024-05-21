@@ -607,6 +607,10 @@
   .fonctionnement .fonctionnement__div {
     width: 30%;
   }
+  .restaurants {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
   .restaurants .card__group {
     display: flex;
     flex-direction: row;
@@ -614,18 +618,15 @@
     margin-top: 15px;
   }
   .restaurants .card__group > a {
-    width: 40%;
+    width: 47%;
     text-decoration: none;
   }
   .restaurants .card__group .card {
-    width: 720px;
-    height: 370px;
-  }
-  .restaurants .card__group .card img {
-    height: 280px;
+    width: 100% img;
+    width-height: 160px;
   }
   .restaurants .card__group .card .card__badge {
-    left: 85%;
+    left: 76%;
     top: 22px;
   }
   .restaurants .card__group .card .card__icon {
@@ -692,7 +693,13 @@
     padding-right: 175px;
   }
   .restaurants {
-    padding-left: 176px;
-    padding-right: 390px;
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+  .restaurants .card__badge {
+    left: 85%;
+  }
+  .restaurants .card__newimg {
+    height: 200px;
   }
 }/*# sourceMappingURL=style.css.map */
