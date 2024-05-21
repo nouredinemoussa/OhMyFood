@@ -212,7 +212,7 @@
   width: 30px;
   display: flex;
   align-items: center;
-  font-size: larger;
+  font-size: 23px;
   position: relative;
 }
 .restaurants .card .icon {
@@ -228,7 +228,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  margin-right: -19px;
+  margin-right: -23px;
   transition: opacity 1s ease;
 }
 .restaurants .card .icon--fill:hover {
@@ -339,12 +339,13 @@
   width: 30px;
   display: flex;
   align-items: center;
-  font-size: larger;
+  font-size: 23px;
   position: relative;
 }
 .menu .menu__title .icon {
   color: black;
   transition: color 1s ease;
+  z-index: -10;
 }
 .menu .menu__title .icon:hover {
   color: white;
@@ -354,7 +355,7 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0;
-  margin-right: -19px;
+  margin-right: -23px;
   transition: opacity 1s ease;
 }
 .menu .menu__title .icon--fill:hover {
@@ -563,7 +564,7 @@
   padding-top: 15px;
 }
 .footer-menu .footer__links {
-  margin-left: -20px;
+  margin-left: 0;
   list-style: none;
   color: white;
 }
@@ -606,10 +607,6 @@
   .fonctionnement .fonctionnement__div {
     width: 30%;
   }
-  .restaurants {
-    padding-left: 90px;
-    padding-right: 90px;
-  }
   .restaurants .card__group {
     display: flex;
     flex-direction: row;
@@ -620,8 +617,19 @@
     width: 40%;
     text-decoration: none;
   }
-  .restaurants .card__badge {
-    left: 75%;
+  .restaurants .card__group .card {
+    width: 720px;
+    height: 370px;
+  }
+  .restaurants .card__group .card img {
+    height: 280px;
+  }
+  .restaurants .card__group .card .card__badge {
+    left: 85%;
+    top: 22px;
+  }
+  .restaurants .card__group .card .card__icon {
+    font-size: 23px;
   }
   .footer {
     display: flex;
@@ -676,5 +684,15 @@
   }
   .menu .menu__card:hover .menu__card__txt p {
     overflow: visible;
+  }
+}
+@media (min-width: 1440px) {
+  .fonctionnement {
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+  .restaurants {
+    padding-left: 176px;
+    padding-right: 390px;
   }
 }/*# sourceMappingURL=style.css.map */

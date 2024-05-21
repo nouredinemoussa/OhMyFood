@@ -221,7 +221,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       width: 30px;
       display: flex;
       align-items: center;
-      font-size: larger;
+      font-size: 23px;
       position: relative;
     }
     .icon {
@@ -242,7 +242,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 0;
-      margin-right: -19px;
+      margin-right: -23px;
       transition: opacity 1s ease;
       &:hover {
         opacity: 1;
@@ -350,12 +350,13 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       width: 30px;
       display: flex;
       align-items: center;
-      font-size: larger;
+      font-size: 23px;
       position: relative;
     }
     .icon {
       color: black;
       transition: color 1s ease;
+      z-index: -10;
       &:hover {
         color: white;
       }
@@ -369,7 +370,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       opacity: 0;
-      margin-right: -19px;
+      margin-right: -23px;
       transition: opacity 1s ease;
       &:hover {
         opacity: 1;
@@ -602,7 +603,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding-top: 15px;
   }
   .footer__links {
-    margin-left: -20px;
+    margin-left: 0;
     list-style: none;
     color: white;
     i {
@@ -647,23 +648,33 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
   }
   .restaurants {
-    padding-left: 90px;
-    padding-right: 90px;
     .card__group {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       margin-top: 15px;
+  
       & > a {
         width: 40%;
         text-decoration: none;
       }
+          .card {
+      width: 720px;
+      height: 370px; 
+      img {
+        height: 280px;
+      }
+        .card__badge {
+      left: 85%;
+      top: 22px;
     }
-
-    .card__badge {
-      left: 75%;
+    .card__icon {
+      font-size: 23px;
     }
+    }
+    } 
   }
+  
 
 .footer {
   display: flex;
@@ -719,4 +730,14 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 .menu .menu__card:hover .menu__card__txt p {
   overflow: visible;
 }
+}
+@media (min-width: 1440px) {
+  .fonctionnement {
+    padding-left: 175px;
+    padding-right: 175px;
+  }
+  .restaurants {
+    padding-left: 176px;
+    padding-right: 390px;
+  }
 }
