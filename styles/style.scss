@@ -17,15 +17,33 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   flex-direction: column;
 }
+@mixin footer-title {
+  font-family: "Shrikhand";
+  font-weight: 100;
+  margin-left: 20px;
+  margin-bottom: -10px;
+  margin-top: 0;
+  padding-top: 15px;
+}
+@mixin icon--fill {
+  background: -webkit-linear-gradient(
+    rgb(147, 86, 220),
+    rgba(255, 121, 218, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  margin-right: -23px;
+  transition: opacity 1s ease;
+}
 /****Général****/
 * {
   font-family: "Roboto", sans-serif;
 }
 /*** Header****/
 .header {
-  display: flex;
+  @include column();
   justify-content: center;
-  flex-direction: column;
   .header__logo {
     display: flex;
     justify-content: center;
@@ -56,9 +74,9 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-    animation: fadeOut 2s forwards 2s; /* 2s delay for loader visibility */
-    z-index: 10; /* Initially visible */
+    background-color: rgba(255, 255, 255, 0.8);
+    animation: fadeOut 2s forwards 2s;
+    z-index: 10; 
   }
 .loader {
     width: 15px;
@@ -102,7 +120,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     50% { opacity: 0.3; }
   }
   @keyframes fadeOut {
-    to { opacity: 0; z-index: -1; } /* Hide and move the loader container below other content */
+    to { opacity: 0; z-index: -1; }
   }
 /***Reservation****/
 .reservation {
@@ -173,6 +191,9 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       display: table;
       position: relative;
       left: 10px;
+      & > p {
+        font-size: 12px;
+      }
     }
     .fonctionnement__btn {
       border-radius: 20px;
@@ -208,7 +229,14 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 5px;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
     padding: 0%;
-    margin-bottom: 20px;
+    margin-bottom: 20px;  
+    .card__img {
+    height: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+    width: 100%;
+  }
     .card__newimg {
       margin-top: -20px;
     }
@@ -216,15 +244,23 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     .card-content {
       display: flex;
       flex-direction: row;
-    }
-    .card__icon {
+      .card__txt {
+        width: 100%;
+        margin-left: 10px;
+        color: black;     
+         .card__txt__loc {
+        margin-top: -15px;
+        margin-bottom: 13px;
+      } 
+      }
+   
+      .card__icon {
       width: 30px;
       display: flex;
       align-items: center;
       font-size: 23px;
       position: relative;
-    }
-    .icon {
+      margin-right: 20px;  .icon {
       transition: color 1s ease;
       color: black;
       z-index: -10;
@@ -235,25 +271,13 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
     .icon--fill {
-      background: -webkit-linear-gradient(
-        rgb(147, 86, 220),
-        rgba(255, 121, 218, 1)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      opacity: 0;
-      margin-right: -23px;
-      transition: opacity 1s ease;
+@include icon--fill();
       &:hover {
         opacity: 1;
       }
     }
-    .card__txt {
-      width: 100%;
-      margin-left: 10px;
-      color: black;
     }
- 
+    }
     .card__badge {
       width: 80px;
       height: 20px;
@@ -267,13 +291,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       top: 32px;
     }
   }
-  .card img {
-    height: 150px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    object-fit: cover;
-    width: 100%;
-  }
+
 }
 /*****Footer****/
 .footer {
@@ -281,12 +299,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   color: white;
   padding-bottom: 15px;
   &__h2 {
-    font-family: "Shrikhand";
-    font-weight: 100;
-    margin-left: 20px;
-    margin-bottom: -10px;
-    margin-top: 0;
-    padding-top: 15px;
+  @include footer-title;
   }
   &__links {
     margin-left: -20px;
@@ -329,8 +342,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 /**** Menu******/
 .menu {
   background-color: #eaeaea;
-  display: flex;
-  flex-direction: column;
+  @include column();
   position: relative;
   padding-bottom: 25px;
   padding-left: 6px;
@@ -363,15 +375,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
     .icon--fill {
-      background: -webkit-linear-gradient(
-        rgb(147, 86, 220),
-        rgba(255, 121, 218, 1)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      opacity: 0;
-      margin-right: -23px;
-      transition: opacity 1s ease;
+@include icon--fill();
       &:hover {
         opacity: 1;
       }
@@ -595,15 +599,10 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   color: white;
   padding-bottom: 15px;
   .footer__h2 {
-    font-family: "Shrikhand" sans-serif;
-    font-weight: 100;
-    margin-left: 20px;
-    margin-bottom: -10px;
-    margin-top: 0;
-    padding-top: 15px;
+   @include footer-title();
   }
   .footer__links {
-    margin-left: 0;
+    margin-left: -20px;
     list-style: none;
     color: white;
     i {
@@ -631,6 +630,18 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     box-shadow: 0px 0px 0px -0px rgba(0, 0, 0, 0);
     padding-top: 30px;
     padding-bottom: 30px;
+    & > h1 {
+      font-size: 40px;
+    }
+    & > p {
+      font-size: 18px;
+    }
+    .reservation__btn {
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+    }
   }
   .fonctionnement {
     padding-top: 30px;
@@ -645,6 +656,9 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
     .fonctionnement__div {
       width: 30%;
+    }
+    .fonctionnement__btn {
+      padding-left: 60px;
     }
   }
   .restaurants {
@@ -681,17 +695,23 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   flex-direction: row-reverse;
   padding-top: 35px;
+  .footer__h2 {
+    margin-left: 80px;
+    margin-right: 40px;    
+    font-size: large;
+  }
   .footer__links {
     display: flex;
     flex-direction: row;
-    .footer__a {
-      margin-left: 5px;
+
+  }    
+  .footer__links--margin {
+      margin-left: 40px;
     }
-  }
-  h2 {
-    margin-right: 15px;
-    font-size: large;
-  }
+    .footer__a {
+      margin-left: 10px;
+    }
+
 }
 .header__menu {
   margin-top: 20px;
@@ -713,17 +733,22 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   display: flex;
   flex-direction: row-reverse;
   padding-top: 35px;
+  .footer__h2 {
+    margin-left: 80px;
+    margin-right: 40px;    
+    font-size: large;
+  }
   .footer__links {
     display: flex;
     flex-direction: row;
-    .footer__a {
-      margin-left: 5px;
+  
+  }  .footer__links--margin {
+      margin-left: 40px;
     }
-  }
-  h2 {
-    margin-right: 15px;
-    font-size: large;
-  }
+    .footer__a {
+      margin-left: 10px;
+    }
+
 }
 .menu .menu__card:hover .menu__card__txt h3 {
   overflow: visible;
@@ -735,17 +760,28 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 @media (min-width: 1440px) {
   .fonctionnement {
     padding-left: 175px;
-    padding-right: 175px;
+    padding-right: 175px; 
+    .fonctionnement__btn {
+      font-size: 16px;
+      .fonctionnement__btn__icon {
+        margin-right: 27px;
+      }
+    }
   }
   .restaurants {
     padding-left: 175px;
     padding-right: 175px;
+    .card { 
     .card__badge {
       left: 85%;
+    }
+    .card__img {
+      height: 200px;
     }
     .card__newimg {
       height: 200px;
     }
+  }
   }
 
 }

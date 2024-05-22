@@ -9,8 +9,8 @@
 /*** Header****/
 .header {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 }
 .header .header__logo {
   display: flex;
@@ -43,9 +43,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
-  animation: fadeOut 2s forwards 2s; /* 2s delay for loader visibility */
-  z-index: 10; /* Initially visible */
+  background-color: rgba(255, 255, 255, 0.8);
+  animation: fadeOut 2s forwards 2s;
+  z-index: 10;
 }
 
 .loader {
@@ -97,7 +97,7 @@
   to {
     opacity: 0;
     z-index: -1;
-  } /* Hide and move the loader container below other content */
+  }
 }
 /***Reservation****/
 .reservation {
@@ -164,6 +164,9 @@
   position: relative;
   left: 10px;
 }
+.fonctionnement .fonctionnement__div .fonctionnement__num > p {
+  font-size: 12px;
+}
 .fonctionnement .fonctionnement__div .fonctionnement__btn {
   border-radius: 20px;
   height: 60px;
@@ -201,6 +204,14 @@
   padding: 0%;
   margin-bottom: 20px;
 }
+.restaurants .card .card__img {
+  height: 150px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
 .restaurants .card .card__newimg {
   margin-top: -20px;
 }
@@ -208,22 +219,32 @@
   display: flex;
   flex-direction: row;
 }
-.restaurants .card .card__icon {
+.restaurants .card .card-content .card__txt {
+  width: 100%;
+  margin-left: 10px;
+  color: black;
+}
+.restaurants .card .card-content .card__txt .card__txt__loc {
+  margin-top: -15px;
+  margin-bottom: 13px;
+}
+.restaurants .card .card-content .card__icon {
   width: 30px;
   display: flex;
   align-items: center;
   font-size: 23px;
   position: relative;
+  margin-right: 20px;
 }
-.restaurants .card .icon {
+.restaurants .card .card-content .card__icon .icon {
   transition: color 1s ease;
   color: black;
   z-index: -10;
 }
-.restaurants .card .icon:hover {
+.restaurants .card .card-content .card__icon .icon:hover {
   color: white;
 }
-.restaurants .card .icon--fill {
+.restaurants .card .card-content .card__icon .icon--fill {
   background: -webkit-linear-gradient(rgb(147, 86, 220), rgb(255, 121, 218));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -231,13 +252,8 @@
   margin-right: -23px;
   transition: opacity 1s ease;
 }
-.restaurants .card .icon--fill:hover {
+.restaurants .card .card-content .card__icon .icon--fill:hover {
   opacity: 1;
-}
-.restaurants .card .card__txt {
-  width: 100%;
-  margin-left: 10px;
-  color: black;
 }
 .restaurants .card .card__badge {
   width: 80px;
@@ -250,14 +266,6 @@
   text-align: center;
   left: 70%;
   top: 32px;
-}
-.restaurants .card img {
-  height: 150px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
 }
 
 /*****Footer****/
@@ -556,7 +564,7 @@
   padding-bottom: 15px;
 }
 .footer-menu .footer__h2 {
-  font-family: "Shrikhand" sans-serif;
+  font-family: "Shrikhand";
   font-weight: 100;
   margin-left: 20px;
   margin-bottom: -10px;
@@ -564,7 +572,7 @@
   padding-top: 15px;
 }
 .footer-menu .footer__links {
-  margin-left: 0;
+  margin-left: -20px;
   list-style: none;
   color: white;
 }
@@ -593,6 +601,18 @@
     padding-top: 30px;
     padding-bottom: 30px;
   }
+  .reservation > h1 {
+    font-size: 40px;
+  }
+  .reservation > p {
+    font-size: 18px;
+  }
+  .reservation .reservation__btn {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
   .fonctionnement {
     padding-top: 30px;
     padding-bottom: 30px;
@@ -606,6 +626,9 @@
   }
   .fonctionnement .fonctionnement__div {
     width: 30%;
+  }
+  .fonctionnement .fonctionnement__btn {
+    padding-left: 60px;
   }
   .restaurants {
     padding-left: 90px;
@@ -637,16 +660,20 @@
     flex-direction: row-reverse;
     padding-top: 35px;
   }
+  .footer .footer__h2 {
+    margin-left: 80px;
+    margin-right: 40px;
+    font-size: large;
+  }
   .footer .footer__links {
     display: flex;
     flex-direction: row;
   }
-  .footer .footer__links .footer__a {
-    margin-left: 5px;
+  .footer .footer__links--margin {
+    margin-left: 40px;
   }
-  .footer h2 {
-    margin-right: 15px;
-    font-size: large;
+  .footer .footer__a {
+    margin-left: 10px;
   }
   .header__menu {
     margin-top: 20px;
@@ -669,16 +696,20 @@
     flex-direction: row-reverse;
     padding-top: 35px;
   }
+  .footer-menu .footer__h2 {
+    margin-left: 80px;
+    margin-right: 40px;
+    font-size: large;
+  }
   .footer-menu .footer__links {
     display: flex;
     flex-direction: row;
   }
-  .footer-menu .footer__links .footer__a {
-    margin-left: 5px;
+  .footer-menu .footer__links--margin {
+    margin-left: 40px;
   }
-  .footer-menu h2 {
-    margin-right: 15px;
-    font-size: large;
+  .footer-menu .footer__a {
+    margin-left: 10px;
   }
   .menu .menu__card:hover .menu__card__txt h3 {
     overflow: visible;
@@ -692,14 +723,23 @@
     padding-left: 175px;
     padding-right: 175px;
   }
+  .fonctionnement .fonctionnement__btn {
+    font-size: 16px;
+  }
+  .fonctionnement .fonctionnement__btn .fonctionnement__btn__icon {
+    margin-right: 27px;
+  }
   .restaurants {
     padding-left: 175px;
     padding-right: 175px;
   }
-  .restaurants .card__badge {
+  .restaurants .card .card__badge {
     left: 85%;
   }
-  .restaurants .card__newimg {
+  .restaurants .card .card__img {
+    height: 200px;
+  }
+  .restaurants .card .card__newimg {
     height: 200px;
   }
 }/*# sourceMappingURL=style.css.map */
