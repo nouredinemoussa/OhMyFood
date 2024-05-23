@@ -119,7 +119,7 @@
   position: relative;
 }
 .reservation .reservation__btn::before {
-  content: "";
+  content: "Explorer nos restaurants";
   position: absolute;
   top: 0;
   right: 0;
@@ -129,6 +129,10 @@
   opacity: 0;
   transition: opacity 2s;
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 .reservation .reservation__btn:hover::before {
   opacity: 1;
@@ -153,19 +157,20 @@
 .fonctionnement .fonctionnement__div .fonctionnement__num {
   width: 20px;
   height: 20px;
-  line-height: 20px;
   text-align: center;
   border-radius: 50%;
   border: none;
   background-color: #9356dc;
   color: white;
   align-self: center;
-  display: table;
   position: relative;
   left: 10px;
+  display: flex;
+  justify-content: center;
 }
 .fonctionnement .fonctionnement__div .fonctionnement__num > p {
   font-size: 12px;
+  align-self: center;
 }
 .fonctionnement .fonctionnement__div .fonctionnement__btn {
   border-radius: 20px;
@@ -196,6 +201,9 @@
 .restaurants .card__group a {
   text-decoration: none;
 }
+.restaurants .card--margin {
+  margin-top: 35px;
+}
 .restaurants .card {
   background-color: white;
   border-radius: 20px;
@@ -213,7 +221,7 @@
   width: 100%;
 }
 .restaurants .card .card__newimg {
-  margin-top: -20px;
+  margin-top: -52px;
 }
 .restaurants .card .card-content {
   display: flex;
@@ -257,15 +265,17 @@
 }
 .restaurants .card .card__badge {
   width: 80px;
-  height: 20px;
   border: none;
   background-color: #99e2d0;
   color: #008766;
-  display: table;
   position: relative;
-  text-align: center;
-  left: 70%;
-  top: 32px;
+  left: 71%;
+  top: 11px;
+}
+.restaurants .card .card__badge > p {
+  display: flex;
+  justify-content: center;
+  color: #008766;
 }
 
 /*****Footer****/
@@ -455,6 +465,9 @@
   width: 60px;
   display: block;
 }
+.menu .btn__align {
+  align-self: center;
+}
 .menu .menu__btn {
   border-radius: 25px;
   border: none;
@@ -469,7 +482,7 @@
   margin-top: 11px;
 }
 .menu .menu__btn::before {
-  content: "";
+  content: "Commander";
   position: absolute;
   top: 0;
   right: 0;
@@ -479,6 +492,10 @@
   opacity: 0;
   transition: opacity 2s;
   border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
 }
 .menu .menu__btn:hover::before {
   opacity: 1;
@@ -644,13 +661,15 @@
     width: 47%;
     text-decoration: none;
   }
+  .restaurants .card__group .card--margin {
+    margin-top: 0;
+  }
   .restaurants .card__group .card {
-    width: 100% img;
-    width-height: 160px;
+    width: 100%
   }
   .restaurants .card__group .card .card__badge {
     left: 76%;
-    top: 22px;
+    top: 8px;
   }
   .restaurants .card__group .card .card__icon {
     font-size: 23px;
@@ -669,19 +688,20 @@
     display: flex;
     flex-direction: row;
   }
-  .footer .footer__links--margin {
+  .footer .footer__links .footer__links--margin {
     margin-left: 40px;
   }
-  .footer .footer__a {
+  .footer .footer__links .footer__a {
     margin-left: 10px;
   }
+  /****Responsive de la page de restaurant *****/
   .header__menu {
     margin-top: 20px;
     margin-bottom: 20px;
   }
   .img__intro {
     width: 100%;
-    height: 60%;
+    height: 383px;
     -o-object-fit: cover;
        object-fit: cover;
   }
@@ -690,6 +710,19 @@
     margin-left: 105px;
     padding-left: 90px;
     padding-right: 90px;
+  }
+  .menu .menu__title {
+    justify-content: center;
+  }
+  .menu .menu__title > h1 {
+    margin-right: 25px;
+  }
+  .menu .menu__btn {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    justify-content: center;
   }
   .footer-menu {
     display: flex;
@@ -705,10 +738,10 @@
     display: flex;
     flex-direction: row;
   }
-  .footer-menu .footer__links--margin {
+  .footer-menu .footer__links .footer__links--margin {
     margin-left: 40px;
   }
-  .footer-menu .footer__a {
+  .footer-menu .footer__links .footer__a {
     margin-left: 10px;
   }
   .menu .menu__card:hover .menu__card__txt h3 {
