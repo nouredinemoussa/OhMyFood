@@ -133,6 +133,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 4px 16px 0px;
 }
 .reservation .reservation__btn:hover::before {
   opacity: 1;
@@ -465,9 +466,6 @@
   width: 60px;
   display: block;
 }
-.menu .btn__align {
-  align-self: center;
-}
 .menu .menu__btn {
   border-radius: 25px;
   border: none;
@@ -496,6 +494,7 @@
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: rgba(99, 99, 99, 0.4) 0px 4px 16px 0px;
 }
 .menu .menu__btn:hover::before {
   opacity: 1;
@@ -665,7 +664,7 @@
     margin-top: 0;
   }
   .restaurants .card__group .card {
-    width: 100%
+    width: 100%;
   }
   .restaurants .card__group .card .card__badge {
     left: 76%;

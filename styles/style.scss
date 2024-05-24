@@ -7,6 +7,7 @@ $lighter-grey: #f3f3f3;
 $dark-grey: #353535;
 $green-font: #008766;
 $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+$btn-shadow-darker: rgba(99, 99, 99, 0.4) 0px 4px 16px 0px;
 
 /****Mixin*****/
 @mixin align-self {
@@ -170,6 +171,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       align-items: center;
       justify-content: center;
       color: white;
+      box-shadow: $btn-shadow-darker;
     }
     &:hover {
       &::before {
@@ -486,16 +488,13 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       display: block;
     }
   }
-  .btn__align {
-    align-self: center;
-  }
   .menu__btn {
     border-radius: 25px;
     border: none;
     height: 40px;
     color: white;
     cursor: pointer;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: $btn-shadow;
     background: linear-gradient(
       360deg,
       rgb(147, 86, 220) 0%,
@@ -524,6 +523,7 @@ $btn-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       align-items: center;
       justify-content: center;
        color: white;
+       box-shadow: $btn-shadow-darker;
     }
     &:hover {
       &::before {
