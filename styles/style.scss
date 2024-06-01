@@ -41,6 +41,9 @@ $btn-shadow-darker: rgba(99, 99, 99, 0.4) 0px 4px 16px 0px;
 * {
   font-family: "Roboto", sans-serif;
 }
+body {
+  margin: 0;
+}
 /*** Header****/
 .header {
   @include column();
@@ -186,6 +189,7 @@ $btn-shadow-darker: rgba(99, 99, 99, 0.4) 0px 4px 16px 0px;
 /***Fonctionnement***/
 .fonctionnement {
   @include column();
+  padding: 5px;
   .fonctionnement__grp {
     @include column();
   }
